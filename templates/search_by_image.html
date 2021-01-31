@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <title>Search By Image</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+            <header>
+                <div>
+                    <img class="logo" src="/static/Images/logo.png" alt="logo">
+                </div>
+                <h1>Search By Image<h1>
+            </header>
+    </div>
+    <section class="container">
+        <div class="flex">
+            
+            <div class="left">
+                <form method='post' action="{{ url_for('upload_and_search') }}" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Config Section</legend>
+                        <div>
+                            <input type="file" id="filename" name="filename" required>
+                            <p class="left-text"> Select Number of Photos to Search</p>
+                            <div class="slider">
+                                <input type="range" min="1" max="10" value="5" oninput="rangeValue.innerText=this.value"
+                                name="rangeValue1">
+                                <p id="rangeValue">5</p>
+                            </div>
+                            <button type="submit">Search</button>
+                        </div>
+                        <u>Database Contains Only Below Categories Images</u>
+                        <p>Dog Images / Cat Images / Banana Images 
+                            / Grapes Images /
+                            Micky Mouse Images /
+                            Stop Symbol Images
+                        </p>
+                        <!-- Flash message -->
+                        {% with messages = get_flashed_messages() %}
+	                    {% if messages %}
+                            {% for message in messages %}
+                                <br>
+                                <strong><u style="color:red;">{{ message }}</u>
+                                </strong>
+		                    {% endfor %}
+	                    {% endif %}
+                        {% endwith %}
+                        
+                        {% if filename %}
+                            <div class="box">
+                                <img src="{{ url_for('static', filename='uploads/'+filename) }}" alt="Input Image">
+                                <div class="overlay">Input Image</div>
+                            </div>
+                        {%endif%}
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="right">
+                <h1>Displaying {{count}} Matching Results</h1>
+                <p>
+                    Hover over the Image to see the Cosine Distance;
+                    Lower the Distance, More the Similarity.
+                </p>
+                <div class="gallery">
+                    {% if count > 0 %}
+                    {% for i in range(count) %}
+                    <div class="box">
+                        <img src="{{result[i]}}" alt="Matched Image">
+                        <div class="overlay">{{distance[i][0]}}</div>
+                    </div>
+                    {%endfor%}
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="container">
+        <footer>
+            <center>
+                <a href=https://github.com/Sumanshu-Nankana/Search-By-Image target=_blank>
+                    <i class="fa fa-github fa-2x"></i>
+                </a>
+            </center>
+        </footer>
+    </div>
+</body
+</html>

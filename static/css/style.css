@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: Kalam, sans-serif;
+}
+
+body{
+    /* background: linear-gradient(0.25turn, #6d6027,#d3cbb8); */
+}
+/* Styling for contaner to leave marging from left & right */
+.container{
+    margin: 0 auto;
+    max-width: 100%;
+    width: 1250px;
+    padding: 0 15px;
+    border-bottom: 1px solid violet;
+}
+/*Styling for class flex*/
+.flex{
+    display: flex;
+}
+/*set height and width of logo image*/
+.logo{
+    width: 100px;
+    height:70px;
+    margin-right: 20px;
+}
+/*styling the header*/
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-bottom: 1px solid violet;
+}
+/* Styling for Slider */
+.slider{
+    width: 220px;
+    height: 30px;
+    border: 1px solid #00acee;
+    border-radius: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+.slider p{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+.slider input[type="range"]{
+    appearance: none;
+    background: #00acee;
+    width: 200px;
+    height: 1px;
+}
+/* Styling left Side*/
+.left{
+    width: 100%;
+    max-width: 450px;
+    margin-top: 10px;
+    margin-right: 40px;
+    padding-left: 30px;
+}
+fieldset{
+    padding: 20px;
+}
+fieldset legend,
+h4{
+    font-weight: bold;
+    font-size: larger;
+}
+#filename{
+    padding:20px;
+}
+.left-text{
+    padding:10px;
+    font-weight: bold;
+}
+button{
+    margin: 20px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+    color:blue;
+}
+button:hover{
+    background-color: greenyellow;
+}
+/* Styling Right Side*/
+.right{
+    margin-top: 18px;
+    border: 1px solid gray;
+    padding-left: 30px;
+    margin-right: 0px;
+}
+
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid red;
+    margin: 7px;
+}
+img{
+    width: 150px;
+    height: 150px;
+    transition: 0.5s;
+}
+
+img:hover{
+    filter: grayscale(100%);
+}
+.overlay{
+    position:relative;
+    bottom:27px;
+    text-align: center;
+    color: white;
+    opacity: 0;
+    transition: 0.5s;
+    font-size:larger;
+}
+.box:hover .overlay{
+    opacity: 1;
+}
+
+footer{
+    margin: 20px;
+}
+
+i{
+    font-weight:29px;
+}
+i:hover{
+    color: blue;
+}
+
+@media (max-width: 640px){
+    .container{
+        text-align:center;
+    }
+    .flex {
+        flex-direction: column;
+    }
+}
