@@ -14,6 +14,10 @@ This is simple 'Search by Image' Project in which we will give one image as an I
 
 ![Screenshot](https://github.com/Sumanshu-Nankana/Search-By-Image/blob/main/Search_by_Image.gif)
 
-**To Do**
+**Flask App Screenshot**
 
-Create a web-app using Flask, and Implements the same Logic in it.
+![Screenshot](https://github.com/Sumanshu-Nankana/Search-By-Image/blob/main/Flask_app_screenshot.png)
+
+*In Images folder, only 6 categories Images are there, and total Images are just 88*
+*To improve the result, put more and more images in Images folder*
+
